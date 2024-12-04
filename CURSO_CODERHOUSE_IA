@@ -1,0 +1,316 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNzyYsIxmNGrGPzZo6X/m1u",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/cirilo1989/mis_proyectos/blob/main/CURSO_CODERHOUSE_IA\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Nombre del Proyecto:\n",
+        "Análisis Crediticio Automatizado para Evaluación de Riesgo Financiero\n",
+        "\n",
+        "Presentación del Problema:\n",
+        "El acceso al crédito es un factor crítico en el crecimiento económico personal y empresarial. Sin embargo, muchas instituciones financieras enfrentan desafíos al evaluar el riesgo crediticio de sus clientes, especialmente en mercados con información limitada o con sistemas manuales de análisis. La falta de un análisis crediticio preciso puede llevar a otorgar créditos a personas con alta probabilidad de incumplimiento o rechazar solicitudes de individuos con bajo riesgo.\n",
+        "\n",
+        "Desarrollar una solución basada en inteligencia artificial que permita analizar rápidamente los datos crediticios y generar un informe sobre la viabilidad de otorgar créditos es esencial. Esto no solo optimiza los procesos, sino que también aumenta la equidad y la precisión en las decisiones financieras."
+      ],
+      "metadata": {
+        "id": "09vegdXVVa3u"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Desarrollo de la Propuesta de Solución\n",
+        "La solución propuesta utiliza modelos de IA para analizar los datos financieros y crediticios de los clientes. El sistema:\n",
+        "\n",
+        "Obtendrá información relevante del cliente (edad, ingresos, historial crediticio, etc.).\n",
+        "Generará un puntaje crediticio basado en criterios establecidos (historial de pagos, deudas, retrasos).\n",
+        "Analizará el riesgo crediticio y proporcionará recomendaciones claras sobre la viabilidad de otorgar créditos.\n",
+        "Los prompts serán diseñados para evaluar la situación crediticia del cliente, asignar un nivel de riesgo (bajo, medio, alto), y determinar si es apto para recibir un crédito."
+      ],
+      "metadata": {
+        "id": "Ft658MONV7Hz"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Justificación de la Viabilidad del Proyecto\n",
+        "El proyecto es técnicamente viable debido a:\n",
+        "\n",
+        "Acceso a APIs y datos: Se cuenta con fuentes de datos confiables como la API del BCRA para obtener información crediticia.\n",
+        "Uso de modelos existentes: Modelos como GPT-3.5-turbo permiten procesar datos y generar análisis rápidos y precisos.\n",
+        "Escalabilidad y recursos: La solución es modular, lo que facilita su implementación en diferentes instituciones financieras.\n",
+        "Tiempo y recursos: Con las herramientas disponibles (Python, bibliotecas como pandas y requests), se puede implementar el proyecto en semanas."
+      ],
+      "metadata": {
+        "id": "z5Kt2ieeV9gG"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Objetivos\n",
+        "1.Desarrollar un sistema automatizado para calcular el puntaje crediticio y riesgo.\n",
+        "2.Generar recomendaciones claras sobre la viabilidad de otorgar créditos.\n",
+        "3.Optimizar el tiempo de análisis crediticio en instituciones financieras.\n",
+        "4.Reducir los riesgos asociados con decisiones financieras basadas en análisis incompletos."
+      ],
+      "metadata": {
+        "id": "9-JZXuLsWGhJ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Metodología\n",
+        "1.Recolección de datos: Obtener información crediticia del cliente utilizando la API del BCRA.\n",
+        "2.Preprocesamiento: Limpiar y estructurar los datos en un formato adecuado para el análisis.\n",
+        "3.Desarrollo de algoritmos: Calcular el puntaje crediticio basado en criterios establecidos.\n",
+        "4.Evaluación de riesgo: Utilizar prompts en un modelo de IA para determinar el nivel de riesgo y la viabilidad del crédito.\n",
+        "5.Validación: Probar el sistema con datos de prueba para evaluar precisión y utilidad.\n",
+        "6.Iteración: Ajustar los criterios y prompts según los resultados obtenidos."
+      ],
+      "metadata": {
+        "id": "3eIA9To0WW3E"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Herramientas y Tecnologías\n",
+        "1.Python: Para procesar datos y conectarse con APIs.\n",
+        "2.OpenAI GPT-3.5: Para analizar y generar evaluaciones crediticias con prompts bien estructurados.\n",
+        "3.Pandas: Para manipulación y análisis de datos.\n",
+        "4.API BCRA: Fuente de datos de historial crediticio.\n",
+        "5.Requests y Certifi: Para asegurar conexiones seguras a las APIs.\n"
+      ],
+      "metadata": {
+        "id": "otMvSSghWoLO"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Técnicas de Prompting:\n",
+        "Role Prompting: Configurar al modelo como experto financiero.\n",
+        "Instruction Prompting: Instrucciones claras para evaluar riesgo y generar recomendaciones.\n",
+        "Context Prompting: Proveer información estructurada del cliente para análisis"
+      ],
+      "metadata": {
+        "id": "Y3m2cuH0XC6f"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\"\"\"Implementación\n",
+        "Código de Análisis Crediticio y Evaluación de Riesgo:\"\"\"\n",
+        "\n",
+        "import requests\n",
+        "import os\n",
+        "import certifi\n",
+        "import pandas as pd\n",
+        "import urllib3\n",
+        "import openai\n",
+        "import json\n",
+        "\n",
+        "urllib3.disable_warnings()\n",
+        "\n",
+        "# Configura tu clave API\n",
+        "openai.api_key = \"API_OPENIA\"\n",
+        "\n",
+        "#ingresar los datos del usuario\n",
+        "\n",
+        "cuil = #XXXXXXXXXXX VALOR NUMERICO\n",
+        "edad = #XX VALOR NUMERICO\n",
+        "salario_actual = #XXXXXXXXXX VALOR NUMERICO SIN $\n",
+        "\n",
+        "#Con el cuil, se obtiene la informacion del BCRA para obtener el historial crediticio del usuario\n",
+        "\n",
+        "api_url = f\"https://api.bcra.gob.ar/CentralDeDeudores/v1.0/Deudas/Historicas/{cuil}\"\n",
+        "\n",
+        "\n",
+        "response = requests.get(api_url, verify=False)\n",
+        "\n",
+        "\n",
+        "data = response.json()\n",
+        "\n",
+        "results = data.get(\"results\", {})\n",
+        "\n",
+        "# Procesar los períodos y entidades\n",
+        "periods = []\n",
+        "for period in results.get(\"periodos\", []):\n",
+        "    periodo = period.get(\"periodo\")\n",
+        "    for entidad in period.get(\"entidades\", []):\n",
+        "        entidad_info = {\n",
+        "            \"Periodo\": periodo,\n",
+        "            \"Entidad\": entidad.get(\"entidad\"),\n",
+        "            \"Situación\": entidad.get(\"situacion\"),\n",
+        "            \"Monto\": entidad.get(\"monto\"),\n",
+        "            \"En Revisión\": entidad.get(\"enRevision\"),\n",
+        "            \"Proceso Judicial\": entidad.get(\"procesoJud\"),\n",
+        "        }\n",
+        "        periods.append(entidad_info)\n",
+        "\n",
+        "# Crear un DataFrame\n",
+        "df = pd.DataFrame(periods)\n",
+        "\n",
+        "\n",
+        "# Función para calcular el score crediticio\n",
+        "def calcular_score_crediticio(df):\n",
+        "    # Criterios del score\n",
+        "    total_puntaje = 100\n",
+        "    historial_pagos_peso = 35\n",
+        "    utilizacion_credito_peso = 30\n",
+        "    duracion_historial_peso = 15\n",
+        "    diversidad_crediticia_peso = 10\n",
+        "    consultas_recientes_peso = 10\n",
+        "\n",
+        "    # 1. Historial de pagos (35%)\n",
+        "    pagos_puntuales = df[\"Situación\"].sum()\n",
+        "    total_pagos = len(df)\n",
+        "    historial_pagos_score = (pagos_puntuales / total_pagos) * historial_pagos_peso\n",
+        "\n",
+        "    # 2. Utilización de crédito (30%)\n",
+        "    monto_total = df[\"Monto\"].sum()\n",
+        "    utilizacion_credito_score = 0\n",
+        "    if monto_total > 0:  # Si hay actividad crediticia\n",
+        "        utilizacion_credito_score = (0.8) * utilizacion_credito_peso  # Asumimos uso moderado (~80%)\n",
+        "\n",
+        "    # 3. Duración del historial (15%)\n",
+        "    meses_historial = len(df[\"Periodo\"].unique())\n",
+        "    duracion_historial_score = (meses_historial / 12) * duracion_historial_peso  # Normalizamos a 12 meses\n",
+        "\n",
+        "    # 4. Diversidad crediticia (10%)\n",
+        "    entidades_unicas = len(df[\"Entidad\"].unique())\n",
+        "    diversidad_crediticia_score = (entidades_unicas / 5) * diversidad_crediticia_peso  # Asumimos máximo 5 entidades\n",
+        "\n",
+        "    # 5. Consultas recientes (10%)\n",
+        "    consultas_recientes_score = consultas_recientes_peso  # Asumimos sin consultas recientes\n",
+        "\n",
+        "    # Calcular puntaje total\n",
+        "    score_total = (\n",
+        "        historial_pagos_score +\n",
+        "        utilizacion_credito_score +\n",
+        "        duracion_historial_score +\n",
+        "        diversidad_crediticia_score +\n",
+        "        consultas_recientes_score\n",
+        "    )\n",
+        "\n",
+        "    return round(score_total, 2)\n",
+        "\n",
+        "# Calcular el score\n",
+        "score = calcular_score_crediticio(df)\n",
+        "score_total = f\"El score crediticio del cliente es: {score}\"\n",
+        "\n",
+        "def calcular_deuda_actual(df):\n",
+        "    # Filtrar los registros más recientes (Periodo máximo)\n",
+        "    periodo_actual = df[\"Periodo\"].max()\n",
+        "    deuda_actual = df[df[\"Periodo\"] == periodo_actual][\"Monto\"].sum()\n",
+        "    return deuda_actual\n",
+        "\n",
+        "# Calcular la deuda actual\n",
+        "deuda = calcular_deuda_actual(df)\n",
+        "deuda_total = f\"La deuda actual del cliente es: ${deuda}\"\n",
+        "\n",
+        "def calcular_retrasos(df):\n",
+        "    # Obtener el periodo más reciente\n",
+        "    periodo_actual = df[\"Periodo\"].max()\n",
+        "\n",
+        "    # Calcular los últimos 6 periodos\n",
+        "    ultimos_seis_periodos = sorted(df[\"Periodo\"].unique(), reverse=True)[:8]\n",
+        "\n",
+        "    # Filtrar los datos para los últimos 6 periodos\n",
+        "    df_seis_meses = df[df[\"Periodo\"].isin(ultimos_seis_periodos)]\n",
+        "\n",
+        "    # Contar los retrasos (donde Situación no es igual a 1)\n",
+        "    retrasos = df_seis_meses[df_seis_meses[\"Situación\"] != 1]\n",
+        "\n",
+        "    # Retornar el número total de retrasos y los detalles\n",
+        "    return {\n",
+        "        \"total_retrasos\": len(retrasos)\n",
+        "    }\n",
+        "\n",
+        "# Calcular los retrasos\n",
+        "resultado = calcular_retrasos(df)\n",
+        "retrasos_total = f\"Total de retrasos en los últimos 8 meses: {resultado['total_retrasos']}\"\n",
+        "\n",
+        "\n",
+        "def calcular_riesgo_crediticio(datos_usuario):\n",
+        "\n",
+        "    # Prompt inicial para configurar al asistente como experto\n",
+        "    prompt = f\"\"\"\n",
+        "    Actúa como un experto en análisis de riesgo y nivel crediticio. Evalúa la información del usuario\n",
+        "    y proporciona una recomendación clara sobre su perfil crediticio, incluyendo el nivel de riesgo\n",
+        "    (bajo, medio, alto) y si esta acto para un credito de $500.000, si el cliente ni tiene score crediticio no se le puede otorgar el credito.\n",
+        "\n",
+        "    Información del usuario:\n",
+        "    {datos_usuario}\n",
+        "\n",
+        "    Responde de forma profesional, detallada y corta no mas de 60 palabras indicando si es acto o no para el credito.\n",
+        "    \"\"\"\n",
+        "    try:\n",
+        "        # Solicitud a la API con el modelo adecuado para chat\n",
+        "        respuesta = openai.ChatCompletion.create(\n",
+        "            model=\"gpt-3.5-turbo\",\n",
+        "            messages=[{\"role\": \"user\", \"content\": prompt}],\n",
+        "            max_tokens=200,\n",
+        "            temperature=0.1\n",
+        "        )\n",
+        "\n",
+        "        # Extraer el texto de la respuesta\n",
+        "        return respuesta.choices[0].message['content'].strip()\n",
+        "    except Exception as e:\n",
+        "        return f\"Error al conectar con la API: {e}\"\n",
+        "\n",
+        "# Ejemplo de uso\n",
+        "#if __name__ == \"_main_\":\n",
+        "\n",
+        "    # Información del usuario para evaluar\n",
+        "datos = f\"\"\"\n",
+        "    Edad: {edad} años,\n",
+        "    Ingresos mensuales: ${salario_actual},\n",
+        "    {deuda_total},\n",
+        "    {retrasos_total},\n",
+        "    {score_total}\n",
+        "    \"\"\"\n",
+        "\n",
+        "resultado = calcular_riesgo_crediticio(datos)\n",
+        "print(\"Resultado del análisis:\")\n",
+        "print(resultado)\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "hOd26fR2xmHl"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
