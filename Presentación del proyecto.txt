@@ -1,0 +1,39 @@
+Nombre del Proyecto: Análisis Crediticio Automatizado para Evaluación de Riesgo Financiero
+
+Presentación del Problema: El acceso al crédito es un factor crítico en el crecimiento económico personal y empresarial. Sin embargo, muchas instituciones financieras enfrentan desafíos al evaluar el riesgo crediticio de sus clientes, especialmente en mercados con información limitada o con sistemas manuales de análisis. La falta de un análisis crediticio preciso puede llevar a otorgar créditos a personas con alta probabilidad de incumplimiento o rechazar solicitudes de individuos con bajo riesgo.
+
+Desarrollar una solución basada en inteligencia artificial que permita analizar rápidamente los datos crediticios y generar un informe sobre la viabilidad de otorgar créditos es esencial. Esto no solo optimiza los procesos, sino que también aumenta la equidad y la precisión en las decisiones financieras.
+
+Desarrollo de la Propuesta de Solución
+La solución propuesta utiliza modelos de IA para analizar los datos financieros y crediticios de los clientes. El sistema:
+
+Obtendrá información relevante del cliente (edad, ingresos, historial crediticio, etc.).
+Generará un puntaje crediticio basado en criterios establecidos (historial de pagos, deudas, retrasos).
+Analizará el riesgo crediticio y proporcionará recomendaciones claras sobre la viabilidad de otorgar créditos.
+Los prompts serán diseñados para evaluar la situación crediticia del cliente, asignar un nivel de riesgo (bajo, medio, alto), y determinar si es apto para recibir un crédito.
+
+Justificación de la Viabilidad del Proyecto
+El proyecto es técnicamente viable debido a:
+
+Acceso a APIs y datos: Se cuenta con fuentes de datos confiables como la API del BCRA para obtener información crediticia.
+Uso de modelos existentes: Modelos como GPT-3.5-turbo permiten procesar datos y generar análisis rápidos y precisos.
+Escalabilidad y recursos: La solución es modular, lo que facilita su implementación en diferentes instituciones financieras.
+Tiempo y recursos: Con las herramientas disponibles (Python, bibliotecas como pandas y requests), se puede implementar el proyecto en semanas.
+
+Objetivos 1.Desarrollar un sistema automatizado para calcular el puntaje crediticio y riesgo. 2.Generar recomendaciones claras sobre la viabilidad de otorgar créditos. 3.Optimizar el tiempo de análisis crediticio en instituciones financieras. 4.Reducir los riesgos asociados con decisiones financieras basadas en análisis incompletos.
+
+Metodología
+1.Recolección de datos: Obtener información crediticia del cliente utilizando la API del BCRA.
+2.Preprocesamiento: Limpiar y estructurar los datos en un formato adecuado para el análisis.
+3.Desarrollo de algoritmos: Calcular el puntaje crediticio basado en criterios establecidos.
+4.Evaluación de riesgo: Utilizar prompts en un modelo de IA para determinar el nivel de riesgo y la viabilidad del crédito.
+5.Validación: Probar el sistema con datos de prueba para evaluar precisión y utilidad.
+6.Iteración: Ajustar los criterios y prompts según los resultados obtenidos.
+
+Herramientas y Tecnologías
+1.Python: Para procesar datos y conectarse con APIs.
+2.OpenAI GPT-3.5: Para analizar y generar evaluaciones crediticias con prompts bien estructurados.
+3.Pandas: Para manipulación y análisis de datos.
+4.API BCRA: Fuente de datos de historial crediticio.
+5.Requests y Certifi: Para asegurar conexiones seguras a las APIs.
+
